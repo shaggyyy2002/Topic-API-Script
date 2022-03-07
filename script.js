@@ -47,7 +47,7 @@ async function processFile() {
 		accessToken=result.accessToken
 		myHeaders1.append("x-api-key", result.accessToken);
 		myHeaders1.append("Content-Type", "audio/wav");
-	///Read all the files in a directory		
+	///Read the files 		
 	var file=fs.createReadStream(filename)
 	var requestOptions1 = {
 		method: 'POST',
@@ -55,13 +55,13 @@ async function processFile() {
 		body:file,
 		redirect: 'follow'
 	};
-	fetch("https://api-labs.symbl.ai/v1/process/audio?enableSpeakerDiarization=true&diarizationSpeakerCount=2", requestOptions1)
+	fetch("https://api.symbl.ai/v1/process/audio", requestOptions1)
 	.then((response) => {
 		return response.json();
 	})
 	.then((result1) => {
 		console.log(JSON.stringify(result1) + "   " + filename)
-				////Keep checking for completition status
+				////Keep checking for completition status after 10 seconds
 				var requestLoop = setInterval(function(){
 					var myHeaders2 = new Headers();
 					console.log(result.jobId);
@@ -89,7 +89,7 @@ async function processFile() {
 				}, 10000);
 			})
 	.catch(error => console.log('error', error));
-	///// Read files end 
+	// Read files end 
 })
 	.catch(error => console.log('error', error));
 
