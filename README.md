@@ -3,5 +3,6 @@ This script generate Symbl Topics as output and takes and audio file as an input
 
  To run the file from the comand follow below steps :
 - Step 1 : Run `npm install` 
-- Step 2 : run command `node script.js <path-to-file-to-be-processed>`
+- Step 2 : Please add Symbl AppId and AppSecret to line 5 and 6 of file script.js .
+- Step 3 : run command `node script.js <path-to-file-to-be-processed>`
 - Wait and dont close the console, you will see the topics and corresponding Topics sentiments on the console shortly .
