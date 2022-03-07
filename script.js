@@ -15,7 +15,7 @@ async function getTopics(conversationId){
 		headers: myHeaders,
 		redirect: 'follow'
 	};
-	fetch("https://api.symbl.ai/v1/conversations/"+"5050120488878080"+"/topics?sentiment=true", requestOptions)
+	fetch("https://api.symbl.ai/v1/conversations/"+conversationId+"/topics?sentiment=true", requestOptions)
 	.then(response => response.text())
 	.then((result) => {
 		result=JSON.parse(result)
@@ -37,7 +37,7 @@ async function processFile() {
 		body: raw,
 		redirect: 'follow'
 	};
-	fetch("https://api-labs.symbl.ai/oauth2/token:generate", requestOptions)
+	fetch("https://api.symbl.ai/oauth2/token:generate", requestOptions)
 	.then((response) => {
 		return response.json()
 	})
@@ -72,7 +72,7 @@ async function processFile() {
 						headers: myHeaders2,
 						redirect: 'follow'
 					};
-					fetch("https://api-labs.symbl.ai/v1/job/"+result1.jobId, requestOptions2)
+					fetch("https://api.symbl.ai/v1/job/"+result1.jobId, requestOptions2)
 					.then((response) => {
 						return response.json()}
 						)
