@@ -1,4 +1,4 @@
-# topic-api-script
+# Topic-API-Script
 This script generate Symbl Topics as output and takes and audio file as an input .Please download all the files listed in this folder and make sure you have node installed on your system. You can run this from command line and pass file name as an argument .
 
  To run the file from the comand follow below steps :
