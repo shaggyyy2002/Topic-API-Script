@@ -46,7 +46,6 @@ async function processFile() {
 		console.log(result.accessToken);
 		accessToken=result.accessToken
 		myHeaders1.append("x-api-key", result.accessToken);
-		myHeaders1.append("Content-Type", "audio/wav");
 	///Read the files 		
 	var file=fs.createReadStream(filename)
 	var requestOptions1 = {
@@ -64,7 +63,6 @@ async function processFile() {
 				////Keep checking for completition status after 10 seconds
 				var requestLoop = setInterval(function(){
 					var myHeaders2 = new Headers();
-					console.log(result.jobId);
 					myHeaders2.append("x-api-key", accessToken);
 					myHeaders2.append("Content-Type", "application/json");
 					var requestOptions2 = {
