@@ -2,8 +2,8 @@ import fetch from "node-fetch";
 import {Headers} from 'node-fetch';
 import fs from 'fs';
 ///Please enter your Symbl App Id and App Secret below .
-var appId="";
-var appSecret="";
+var appId="31547441734675436235716a6676574b424f57664733616f4e56626b63505853";
+var appSecret="4f76574b2d3368787830446b41446250373935396955655f3359304863672d50654b657444634b4a6f4978507638554d5a6479756a3957793231793973364747";
 var accessToken=""
 /// Get file path from console . 
 var filename = process.argv[2];
